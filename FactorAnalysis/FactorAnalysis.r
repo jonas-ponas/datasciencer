@@ -11,7 +11,7 @@ data <- read_delim("./FactorAnalysis/data/EFA.csv", delim = ";", trim_ws = TRUE)
 
 skim(data)
 
-parallel <- fa.parallel(data, fm = "varimax", fa = "fa") # Oder fm="varimax"
+parallel <- fa.parallel(data, fm = "varimax", fa = "fa") # Oder fm="minres"
 # Den Wert auswählen wo blaue line noch über rot ist aber relativ nah dranne ist.
 
 # Für diese Daten 3, 4, 5 ?
