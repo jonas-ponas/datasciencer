@@ -26,4 +26,6 @@ library(mice)
 # Recipe (Workflow)
 library(recipes)
 
+library(tictoc)
+
 options(scipen = 999) # Entfernt Notationen wie "10e-3" und konvertiert sie in explizites Zahlenformat!

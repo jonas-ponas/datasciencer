@@ -12,6 +12,8 @@ car_data <- car_data %>%
     # filter(!is.na(horsepower)) # Filtere für Zeilen, die Horsepower enthalten
 
 
+
+# Imputation
 imp_car_data <- mice(
         car_data,
         m = 5,

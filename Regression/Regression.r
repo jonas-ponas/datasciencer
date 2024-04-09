@@ -37,6 +37,8 @@ control <- trainControl(
 
 tuneGrid <- expand.grid(C = c(0.1, 1, 10, 100), sigma = c(0.01, 0.1, 1, 10))
 
+tic() # Start Timer
+
 fit <- train(
     acceleration ~ .,
     data = juice(prep_recipe),
@@ -44,6 +46,8 @@ fit <- train(
     trControl = control,
     tuneGrid = tuneGrid
 )
+
+toc() # Stop Timer
 
 cv_predictions <- predict(fit, newdata = juice(prep_recipe_test))
 

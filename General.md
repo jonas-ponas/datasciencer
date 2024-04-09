@@ -53,3 +53,30 @@ RMSE (Root Mean Squared Error)
 ```{r}
 
 ```
+
+# Accuracy / Precision / Recall
+
+```{r}
+# Genauigkeit berechnen
+accuracy_value <- updated_predictions %>%
+  yardstick::accuracy(truth = Survived, estimate = .pred_class) %>%
+  pull()
+
+# Präzision berechnen
+precision_value <- updated_predictions %>%
+  yardstick::precision(truth = Survived, estimate = .pred_class) %>%
+  pull()
+
+# Rückruf (Recall) berechnen
+recall_value <- updated_predictions %>%
+  yardstick::recall(truth = Survived, estimate = .pred_class) %>%
+  pull()
+```
+
+Accuracy (Genauigkeit): Der Prozentsatz der korrekten Vorhersagen. Hier liegt die Genauigkeit bei etwa 80,4%, was bedeutet, dass etwa 80,4% der Vorhersagen korrekt sind.
+
+Precision (Präzision): Der Prozentsatz der wahren positiven Vorhersagen im Verhältnis zu allen positiven Vorhersagen. Hier liegt die Präzision bei etwa 83%, was darauf hinweist, dass von den als positiv vorhergesagten Fällen etwa 83% tatsächlich positiv sind.
+
+Recall (Rückruf): Der Prozentsatz der wahren positiven Vorhersagen im Verhältnis zu allen tatsächlich positiven Fällen. Hier liegt der Recall bei etwa 87,4%, was bedeutet, dass das Modell etwa 87,4% der tatsächlich positiven Fälle erfasst.
+
+
